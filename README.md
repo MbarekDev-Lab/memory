@@ -1,4 +1,4 @@
-[lets play](memory-game-letsplay.netlify.app)
+[lets play](https://memory-game-letsplay.netlify.app/)
 
 # JavaScript
 # Memory-Challenge

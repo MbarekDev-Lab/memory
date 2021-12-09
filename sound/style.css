@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
+* {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Rampart One', cursive;
+    background-color: #4158D0;
+    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+  }
+  
+#countdown{
+  text-align: center;
+  margin: 0px;
+  color: rgb(153, 51, 68);
+  font-size: 35px;
+  /* animation-duration: 5s; */
+  animation: h1 1.5s steps(10, start) alternate-reverse both;
+}
+
+@keyframes h1{
+  0% {
+    transform: scale(1) rotateX(0);
+  }
+  50% {
+    transform: scale(2) rotateX(-180deg);
+  }
+  100% {
+    transform: scale(3) rotateX(-360deg);
+  }
+  0% {
+    transform: scale(4) rotateX(0);
+  }
+  50% {
+    transform: scale(2) rotateX(-180deg);
+  }
+  100% {
+    transform: scale(1) rotateX(-360deg);
+  }
+}
+
+  
+#clockdiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 50px;
+  }
+  
+#clockdiv > div{
+    margin-left: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background: #00BF96;
+    display: inline-block;
+  }
+  
+#clockdiv div > span{
+    padding: 10px;
+    border-radius: 10px;
+    background: #00816A;
+    display: inline-block;
+  }
+  
+  .smalltext{
+    padding-top: 10px;
+    font-size: 20px;
+  }
+  
+  .control-buttons {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    /* background-color: #8ec5fcad;
+    background-image: linear-gradient(62deg, #8ec5fcb6 0%, #e0c3fcbd 100%); */
+/*     
+    background-image: linear-gradient(to right, #eea2a2 0%, #bbc1bf 19%, #57c6e1 42%, #b49fda 79%, #7ac5d8 100%); */
+
+    background-color: #ff3caaa5;
+    background-image: linear-gradient(315deg, #ff3caaaa 0%, #030bf49a 19%, #784BA0 39%, #1788d8a7 60%, #3f11e69c 80%, #ff002290 100%);
+  }
+
+  /* .control-buttons span {background-image: linear-gradient(to right, #3A1C71 0%, #D76D77  51%, #3A1C71  100%)} */
+  .control-buttons span {
+     margin: 10px;
+     padding: 15px 45px;
+     text-align: center;
+     text-transform: uppercase;
+     transition: 0.5s;
+     background-size: 200% auto;
+     color: white;            
+     box-shadow: 0 0 20px #eee;
+     border-radius: 10px;
+     display: block;
+   }
+   .control-buttons span:hover {
+     background-position: right center; 
+     color: #fff;
+     text-decoration: none;
+   }
+  .control-buttons span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-image: linear-gradient(to right, #3A1C71 0%, #D76D77  51%, #3A1C71  100%);
+    color: #FFF;
+    padding: 15px 25px;
+    font-size: 30px;
+    text-align: center;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  .info-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1080px;
+    margin: 20px auto 0;
+    background-image: radial-gradient( circle farthest-corner at 11.7% 80.6%,  rgba(249,185,255,1) 0%, rgba(177,172,255,1) 49.3%, rgb(98, 231, 255) 89% );
+    padding: 20px;
+    font-size: 24px;
+    overflow: hidden;
+    border: 2px solid #2196f3;
+  }
+  .info-container .name {
+    float: left;
+    width: 50%;
+    text-align: left;
+  }
+  .info-container .name span{
+    font-size: 60px;
+    color:hsl(289, 100%, 50%);
+  }
+  .info-container .tries {
+    float: right;
+    width: 50%;
+    text-align: right;
+  }
+  .info-container .tries span{
+    font-size: 60px;
+    color:hsl(289, 100%, 50%);
+  }
+  .memory-game-blocks {
+    display: flex;
+    width: 1100px;
+    flex-wrap: wrap;
+    margin: 20px auto;
+  }
+  .memory-game-blocks.no-clicking {
+    pointer-events: none;
+  }
+  .memory-game-blocks .game-block {
+    height: 200px;
+    transition: transform .5s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    position: relative;
+    flex: 1 0 200px;
+    margin: 0 10px 20px;
+  }
+  .memory-game-blocks .game-block .front {
+    background-image: radial-gradient( circle farthest-corner at 16.5% 28.1%,  rgba(15,27,49,1) 0%, rgba(0,112,218,1) 90% );
+    /* background-color: rgb(16, 13, 13); */
+    line-height: 200px;
+  }
+  .memory-game-blocks .game-block .front:before {
+    content: '?';
+    color: rgb(255, 255, 255);
+    font-size: 140px;
+    font-weight: bold;
+  }
+  .memory-game-blocks .game-block .back {
+    background-color: #105488;
+    transform: rotateY(180deg);
+  }
+  .memory-game-blocks .game-block .back img {
+    width: 180px;
+    height: 180px;
+    margin-top: 5px;
+  }
+  .memory-game-blocks .game-block .face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    backface-visibility: hidden;
+    border: 5px solid #2196F3;
+  }
+  .memory-game-blocks .game-block.is-flipped,
+  .memory-game-blocks .game-block.has-match {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    pointer-events: none;
+  }
